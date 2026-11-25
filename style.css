@@ -8,6 +8,43 @@
     scroll-behavior: smooth;
 }
 
+/* MOBILE LOGIN AND REGISTER BUTTONS */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-buttons {
+        display: flex;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 15px 4%;
+        background: #ffffff;
+        justify-content: center;
+        gap: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        z-index: 1001;
+    }
+
+    .nav-buttons .login-btn {
+        padding: 12px 18px;
+        border: 1px solid #dce6f2;
+        border-radius: 7px;
+    }
+
+    .nav-buttons .register-btn {
+        padding: 12px 18px;
+    }
+
+    .nav-links {
+        top: 135px;
+    }
+}
+
 body {
     background: #ffffff;
     color: #17243b;
@@ -1113,6 +1150,44 @@ ul {
 
     .footer-brand {
         grid-column: auto;
+    }
+
+}
+
+/* MOBILE LOGIN AND REGISTER BUTTONS */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .nav-buttons {
+        display: flex !important;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 15px 4%;
+        background: #ffffff;
+        justify-content: center;
+        gap: 15px;
+        z-index: 1002;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links {
+        top: 135px;
+        z-index: 1001;
+    }
+
+    .nav-buttons .login-btn,
+    .nav-buttons .register-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
     }
 
 }

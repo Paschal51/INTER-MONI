@@ -1,3 +1,4 @@
+
 // ===================================
 // INTER MONI - JAVASCRIPT
 // ===================================
@@ -8,23 +9,31 @@
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", function () {
+if (menuToggle && navLinks) {
 
-    navLinks.classList.toggle("active");
+    menuToggle.addEventListener("click", function () {
 
-    const icon = menuToggle.querySelector("i");
+        navLinks.classList.toggle("active");
 
-    if (navLinks.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
-        menuToggle.setAttribute("aria-label", "Close navigation");
-    } else {
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-    }
+        const icon = menuToggle.querySelector("i");
 
-});
+        if (icon) {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+        }
+
+        const isOpen = navLinks.classList.contains("active");
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+
+    });
+
+}
 
 
 // 2. CLOSE MENU AFTER CLICKING A LINK
@@ -35,14 +44,22 @@ navigationItems.forEach(function (link) {
 
     link.addEventListener("click", function () {
 
-        navLinks.classList.remove("active");
+        if (navLinks) {
+            navLinks.classList.remove("active");
+        }
 
-        const icon = menuToggle.querySelector("i");
+        if (menuToggle) {
 
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+            const icon = menuToggle.querySelector("i");
 
-        menuToggle.setAttribute("aria-label", "Open navigation");
+            if (icon) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+
+            menuToggle.setAttribute("aria-label", "Open navigation");
+            menuToggle.setAttribute("aria-expanded", "false");
+        }
 
     });
 
@@ -78,21 +95,25 @@ allLinks.forEach(function (link) {
 
         if (targetId === "#") {
             event.preventDefault();
+
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
+
             return;
         }
 
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
+
             event.preventDefault();
 
             targetSection.scrollIntoView({
                 behavior: "smooth"
             });
+
         }
 
     });
@@ -131,39 +152,6 @@ window.addEventListener("scroll", function () {
 });
 
 
-// 6. DEMONSTRATION BUTTONS
+// 6. WEBSITE LOADED MESSAGE
 
-const demoButtons = document.querySelectorAll(
-    ".hero-buttons a, .feature-card a, .plan-btn, .cta-btn"
-);
-
-demoButtons.forEach(function (button) {
-
-    button.addEventListener("click", function (event) {
-
-        const target = button.getAttribute("href");
-
-        if (target === "#login") {
-            event.preventDefault();
-
-            alert("Inter Moni demo: Login functionality will be added in the next development stage.");
-        }
-
-        if (target === "#register") {
-            event.preventDefault();
-
-            alert("Inter Moni demo: Registration functionality will be added in the next development stage.");
-        }
-
-    });
-
-});
-
-
-// 7. WEBSITE LOADED MESSAGE
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    console.log("Inter Moni website loaded successfully.");
-
-});
+console.log("Inter Moni demonstration website loaded successfully.");
