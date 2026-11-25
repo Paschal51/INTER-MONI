@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Inter Moni Demo</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <h2>INTER <span>MONI</span></h2>
+
+      <p class="sidebar-title">MAIN MENU</p>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-link active" data-section="overview">Dashboard</a>
+        <a href="#" class="nav-link" data-section="transactions">Transactions</a>
+        <a href="#" class="nav-link" data-section="profile">My Profile</a>
+        <a href="#" class="nav-link" data-section="notifications">Notifications</a>
+        <a href="#" class="nav-link" data-section="settings">Settings</a>
+      </nav>
+
+      <button id="logoutBtn">Logout</button>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-dashboard">
+
+      <header class="topbar">
+
+        <div>
+          <h2>Dashboard</h2>
+          <p>Welcome to your Inter Moni demo account</p>
+        </div>
+
+        <div class="user-avatar">IM</div>
+
+      </header>
+
+      <section class="dashboard-content">
+
+        <p class="demo-label">
+          DEMONSTRATION WEBSITE — NOT A REAL FINANCIAL ACCOUNT
+        </p>
+
+        <!-- DASHBOARD OVERVIEW -->
+        <div class="page-section active" id="overview">
+
+          <h1>Welcome, <span id="userName">User</span></h1>
+
+          <p id="userEmail">Loading email...</p>
+
+          <div class="dashboard-card">
+            <p>Sample account balance</p>
+            <h2>₦50,000.00</h2>
+            <small>Illustrative figure only — not withdrawable funds</small>
+          </div>
+
+          <div class="dashboard-grid">
+
+            <div class="dashboard-item">
+              <h3>Account status</h3>
+              <p>Demo account</p>
+            </div>
+
+            <div class="dashboard-item">
+              <h3>Account type</h3>
+              <p>Practice profile</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- TRANSACTIONS -->
+        <div class="page-section" id="transactions">
+
+          <h1>Transactions</h1>
+          <p>Your sample transaction activity.</p>
+
+          <div class="dashboard-item">
+            <h3>Recent Activity</h3>
+            <p>These are fictional records for demonstration only.</p>
+
+            <div class="transaction-table">
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Reference</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>IM-DEMO-001</td>
+                    <td>Sample Credit</td>
+                    <td>25 Nov 2026</td>
+                    <td>₦15,000</td>
+                    <td><span class="status completed">Demo</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>IM-DEMO-002</td>
+                    <td>Sample Debit</td>
+                    <td>23 Nov 2026</td>
+                    <td>₦5,000</td>
+                    <td><span class="status completed">Demo</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>IM-DEMO-003</td>
+                    <td>Sample Transfer</td>
+                    <td>20 Nov 2026</td>
+                    <td>₦8,000</td>
+                    <td><span class="status pending">Demo</span></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PROFILE -->
+        <div class="page-section" id="profile">
+
+          <h1>My Profile</h1>
+
+          <div class="dashboard-item">
+            <h3>Account name</h3>
+            <p id="profileName">Loading...</p>
+
+            <h3>Email address</h3>
+            <p id="profileEmail">Loading...</p>
+          </div>
+
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <div class="page-section" id="notifications">
+
+          <h1>Notifications</h1>
+
+          <div class="dashboard-item">
+            <h3>Welcome to Inter Moni</h3>
+            <p>Your demo account is ready to explore.</p>
+          </div>
+
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="page-section" id="settings">
+
+          <h1>Settings</h1>
+
+          <div class="dashboard-item">
+            <h3>Account settings</h3>
+            <p>This demonstration profile has no real financial settings.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
+
