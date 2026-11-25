@@ -8,41 +8,78 @@
     scroll-behavior: smooth;
 }
 
-/* MOBILE LOGIN AND REGISTER BUTTONS */
+/* MOBILE HEADER FIX */
 
 @media (max-width: 768px) {
 
     .navbar {
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
     }
 
     .nav-buttons {
-        display: flex;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        padding: 15px 4%;
-        background: #ffffff;
-        justify-content: center;
-        gap: 15px;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
-        z-index: 1001;
+        display: flex !important;
+        position: static;
+        width: auto;
+        padding: 0;
+        margin-left: auto;
+        gap: 8px;
+        box-shadow: none;
+        background: transparent;
     }
 
-    .nav-buttons .login-btn {
-        padding: 12px 18px;
-        border: 1px solid #dce6f2;
-        border-radius: 7px;
+    .login-btn {
+        display: inline-flex;
+        padding: 10px 12px;
+        font-size: 12px;
     }
 
-    .nav-buttons .register-btn {
-        padding: 12px 18px;
+    .register-btn {
+        display: inline-flex;
+        padding: 10px 12px;
+        font-size: 12px;
     }
 
     .nav-links {
-        top: 135px;
+        top: 75px;
+        z-index: 1001;
     }
+
+}
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 16px;
+        gap: 5px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .nav-buttons {
+        gap: 5px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 9px 8px;
+        font-size: 11px;
+    }
+
+    .menu-toggle {
+        font-size: 20px;
+    }
+
 }
 
 body {
